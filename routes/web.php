@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/landing', [App\Http\Controllers\Landing:: class, 'index']);
+Route::get('/age', [App\Http\Controllers\Landing:: class, 'json']);
