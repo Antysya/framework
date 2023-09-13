@@ -18,4 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/landing', [App\Http\Controllers\Landing:: class, 'index']);
-Route::get('/age', [App\Http\Controllers\Landing:: class, 'json']);
+//Route::get('/age', [App\Http\Controllers\Landing:: class, 'json']);
+
+Route::get('/landing_hw', [App\Http\Controllers\Landing_hw:: class, 'index']);
