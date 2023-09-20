@@ -2,10 +2,17 @@ FROM php:8.1-fpm
 
 WORKDIR /app
 
+RUN groupadd --gid 1000 docker
+
+RUN useradd --gid 1000 --uid 1000 docker
+
 RUN apt-get update
 RUN apt-get upgrade -y
 
 RUN apt install -y git zip unzip
+
+RUN apt install -y libpq-dev && \
+      docker-php-ext-install pdo pdo_pgsql pgsql
 
 #COPY entrypoint.sh /entrypoint-component.sh
 
@@ -15,6 +22,8 @@ RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 
 RUN mv composer.phar /usr/local/bin/composer
+
+USER docker:docker
 
 EXPOSE 9000
 

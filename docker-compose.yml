@@ -19,5 +19,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.app
+    env_file:
+      - ./.env
     volumes:
       - .:/app
+
+  db:
+    container_name: framework-db
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: app
+    volumes:
+      - ./db-folder:/var/lib/postgresql/data

@@ -6,7 +6,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Grayscale - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="/assets(1)/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/assets (1)/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -58,7 +58,7 @@
                         </p>
                     </div>
                 </div>
-                <img class="img-fluid" src="/assets(1)/img/ipad.png" alt="..." />
+                <img class="img-fluid" src="/assets (1)/img/ipad.png" alt="..." />
             </div>
         </section>
         <!-- Projects-->
@@ -66,7 +66,7 @@
             <div class="container px-4 px-lg-5">
                 <!-- Featured Project Row-->
                 <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="/assets(1)/img/bg-masthead.jpg" alt="..." /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="/assets (1)/img/bg-masthead.jpg" alt="..." /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
                             <h4>Shoreline</h4>
@@ -76,7 +76,7 @@
                 </div>
                 <!-- Project One Row-->
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="/assets(1)/img/demo-image-01.jpg" alt="..." /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="/assets (1)/img/demo-image-01.jpg" alt="..." /></div>
                     <div class="col-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
@@ -90,7 +90,7 @@
                 </div>
                 <!-- Project Two Row-->
                 <div class="row gx-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="/assets(1)/img/demo-image-02.jpg" alt="..." /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="/assets (1)/img/demo-image-02.jpg" alt="..." /></div>
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
@@ -195,7 +195,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="/js(1)/scripts.js"></script>
+        <script src="/js (1)/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
