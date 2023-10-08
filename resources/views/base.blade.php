@@ -66,6 +66,13 @@
           </ul>
         </section>
 
+        <section class="bg-dark text-white" id="user-name">
+          @if(session()->has('user-name'))
+          <p>Добрый день, {{session('user-name')}}</p>
+          @endif
+          @yield('content')
+        </section>
+
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">

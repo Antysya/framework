@@ -26,6 +26,9 @@ class SingIn extends Controller
         )) {
           Auth::login($user[0]);
 
+          $username=$user[0]->name;
+          session(['user-name' =>$username]);
+
           return redirect()->route('main');
         }
 
