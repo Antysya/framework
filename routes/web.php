@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cookie;
 
 /*
 |--------------------------------------------------------------------------
@@ -9,15 +10,30 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| be assinged to the "web" middleware group. Make something great!
 |
 */
-Route::get('/registration', [App\Http\Controllers\SingUp::class,'form'])->name('registration.form');
-
-Route::post('/registration', [App\Http\Controllers\SingUp::class,'form'])->name('registration.form');
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('main');
+
+Route::get('/registration', [App\Http\Controllers\SingUp::class, 'form'])
+  ->name('registration.form');
+
+Route::post('/registration', [App\Http\Controllers\SingUp::class, 'post'])
+    ->name('registration.post');
+
+Route::get('/login', [App\Http\Controllers\SingIn::class, 'form'])
+  ->name('sing_in.form');
+
+Route::post('/login', [App\Http\Controllers\SingIn::class, 'post'])
+    ->name('sing_in.post');
+
+Route::get('/logout', [App\Http\Controllers\SingIn::class, 'logout'])
+    ->name('sing_in.logout');
+
+Route::get('/reset_password', [App\Http\Controllers\ResetPasswordController::class, 'showResetForm'])
+    ->name('reset.password');
 
 Route::get('/landing', [App\Http\Controllers\Landing:: class, 'index']);
 //Route::get('/age', [App\Http\Controllers\Landing:: class, 'json']);
