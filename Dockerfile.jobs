@@ -29,6 +29,4 @@ RUN apt-get install -y redis-server \
 
 USER docker:docker
 
-EXPOSE 9000
-
-CMD ["php-fpm", "-O", "-F"]
+CMD ["php", "artisan", "queue:work"]

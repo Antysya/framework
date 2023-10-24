@@ -1,0 +1,8 @@
+* * * * * php artisan app-pv113:test -command
+#* * * * * echo "Test ok" >> /tmp/cron.Test
+
+#*/15 * * * * echo "Test ok" >> /tmp/cron.Test каждые 15 минут
+
+# минуты часы день месяц деньнедели
+
+#0 1 10 * * echo "Test ok" >> /tmp/cron.Test

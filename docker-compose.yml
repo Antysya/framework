@@ -24,6 +24,26 @@ services:
     volumes:
       - .:/app
 
+  cron:
+    container_name: framework-cron
+    build:
+      context: .
+      dockerfile: Dockerfile.cron
+    env_file:
+      - ./.env
+    volumes:
+      - .:/app
+
+  jobs:
+    container_name: framework-jobs
+    build:
+      context: .
+      dockerfile: Dockerfile.jobs
+    env_file:
+      - ./.env
+    volumes:
+      - .:/app
+
   db:
     container_name: framework-db
     image: postgres
@@ -32,3 +52,7 @@ services:
       POSTGRES_DB: app
     volumes:
       - ./db-folder:/var/lib/postgresql/data
+
+  redis:
+    container_name: framework-redis
+    image: redis

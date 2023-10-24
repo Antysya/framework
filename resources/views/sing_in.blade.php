@@ -15,6 +15,14 @@
                         alt="Sample photo" class="img-fluid"
                         style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                     </div>
+
+                    <section class="bg-dark text-white" id="user-name">
+                      @if(session()->has('user-name'))
+                      <p>Добрый день, {{session('user-name')}}</p>
+                      @endif
+                      @yield('content')
+                    </section>
+
                     <div class="col-xl-6">
                       <div class="card-body p-md-5 text-black">
                         <h3 class="mb-5 text-uppercase">Student login form</h3>

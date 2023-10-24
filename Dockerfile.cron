@@ -21,14 +21,21 @@ RUN php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031
 RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 
-RUN mv composer.phar /usr/local/bin/composer
-
 RUN apt-get install -y redis-server \
   && pecl install redis \
   && docker-php-ext-enable redis
+  
+RUN mv composer.phar /usr/local/bin/composer
 
-USER docker:docker
+ENV SUPERCRONIC_URL=https://github.com/aptible/supercronic/releases/download/v0.1.9/supercronic-linux-amd64 \
+    SUPERCRONIC=supercronic-linux-amd64 \
+    SUPERCRONIC_SHA1SUM=5ddf8ea26b56d4a7ff6faecdd8966610d5cb9d85
+ RUN curl -fsSLO "$SUPERCRONIC_URL" \
+ && echo "${SUPERCRONIC_SHA1SUM}  ${SUPERCRONIC}" | sha1sum -c - \
+ && chmod +x "$SUPERCRONIC" \
+ && mv "$SUPERCRONIC" "/usr/local/bin/${SUPERCRONIC}" \
+ && ln -s "/usr/local/bin/${SUPERCRONIC}" /usr/local/bin/supercronic
 
-EXPOSE 9000
+ADD crontab /etc/crontab
 
-CMD ["php-fpm", "-O", "-F"]
+CMD ["supercronic", "/etc/crontab"]
