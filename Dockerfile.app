@@ -27,6 +27,14 @@ RUN apt-get install -y redis-server \
   && pecl install redis \
   && docker-php-ext-enable redis
 
+RUN apt-get update && \
+    apt-get install -y \
+    zlib1g-dev \
+    libpng-dev \
+    libfreetype6-dev
+RUN docker-php-ext-configure gd --with-freetype
+
+RUN docker-php-ext-install gd
 USER docker:docker
 
 EXPOSE 9000

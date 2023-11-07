@@ -25,11 +25,11 @@ class SendEmails extends Command
      */
     public function handle()
     {
-        $users= User::where('email_sent', false)->get();
+        /*$users= User::where('email_sent', false)->get();
         foreach ($users as $user){
           echo "Send mail to {$user->email};
           $user->email_sent=true;
-          $user->save();
+          $user->save();*/
         }
-    }
+    
 }
